@@ -12,6 +12,16 @@ void InventoryRow::inc_by(uint32_t c) {
   count += c;
 }
 
+book_id_t InventoryRow::get_book_id() const {
+  //
+  return book_id;
+}
+
+uint32_t InventoryRow::get_count() const {
+  //
+  return count;
+}
+
 uint32_t Inventory::add_stock(book_id_t b_id, position_t p, uint32_t c) {
   //
   auto row = stock.find(p);
