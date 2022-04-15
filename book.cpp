@@ -14,3 +14,5 @@ bool operator==(const Book &b1, const Book &b2) {
          b1.author_id == b2.author_id && b1.publisher_id == b2.publisher_id;
 }
 const string &Book::get_title() const { return title; }
+
+price_t Book::get_price() const { return price; }

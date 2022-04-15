@@ -13,6 +13,8 @@ private:
 public:
   Shop(ExternalDB *, Inventory *);
   book_id_t add_book(Book &, position_t);
+  price_t buy_book(const std::string &, uint32_t);
+  book_id_t find_book(const std::string &);
   author_id_t add_author(const std::string &);
   publisher_id_t add_publisher(const std::string &);
 };
