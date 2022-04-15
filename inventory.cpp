@@ -28,13 +28,13 @@ uint32_t Inventory::add_stock(book_id_t b_id, position_t p, uint32_t c) {
   if (row == stock.end()) {
     stock[p] = unique_ptr<InventoryRow>(new InventoryRow(b_id, c));
   } else {
-    if (row->second->book_id == b_id) {
+    if (row->second->get_book_id() == b_id) {
       row->second->inc_by(c);
     } else {
       throw runtime_error("Position " + to_string(p) +
                           " is already taken by another: book_id " +
-                          to_string(stock[p]->book_id));
+                          to_string(stock[p]->get_book_id()));
     }
   }
-  return stock[p]->count;
+  return stock[p]->get_count();
 }

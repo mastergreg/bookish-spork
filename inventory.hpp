@@ -11,7 +11,6 @@ private:
 public:
   InventoryRow(book_id_t, uint32_t);
   void inc_by(uint32_t = 1);
-  friend class Inventory;
   book_id_t get_book_id() const;
   uint32_t get_count() const;
 };
